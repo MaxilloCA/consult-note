@@ -1,0 +1,8 @@
+{
+  "name": "consult-note-public-review",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Manual pediatric dental consultation note builder",
+  "scripts": { "start": "node server.cjs", "test": "node --test" },
+  "engines": { "node": ">=22" }
+}

@@ -1,0 +1,158 @@
+{
+  "ASA": [
+    "ASA: I",
+    "ASA: II",
+    "ASA: III",
+    "ASA: IV"
+  ],
+  "Brodsky": [
+    "Brodsky I",
+    "Brodsky 2",
+    "Brodsky 3",
+    "Brodsky 4",
+    "Brodsky not available"
+  ],
+  "Accompanied": [
+    "Mother",
+    "Father",
+    "Foster",
+    "Parent",
+    "GMother",
+    "GFather",
+    "Adult Sibling",
+    "CAS worker",
+    "none - Patient alone"
+  ],
+  "ReferralType": [
+    "Referred by Family DDS",
+    "Refer-back",
+    "Well Child Care",
+    "2nd Opinion",
+    "Self Referred"
+  ],
+  "CC": [
+    "Routine Dental Care",
+    "Decay",
+    "Pain",
+    "Infection",
+    "Trauma",
+    "Orthodontic Extractions",
+    "Crowding",
+    "Ectopic Eruption",
+    "F/U as requested"
+  ],
+  "ExamLoc": [
+    "In chair",
+    "Lap exam",
+    "With parent perpendicular in chair",
+    "Standing"
+  ],
+  "Rads": [
+    "NO RADS taken",
+    "Rads reviewed from referral",
+    "2 BW's taken",
+    "3 PA's & 2 BW's taken",
+    "One BW taken",
+    "One PA taken",
+    "2 PA's taken",
+    "3 PA's taken",
+    "4 PA's taken",
+    "5 PA's taken",
+    "PANORAMIC"
+  ],
+  "Scale": [
+    "( + ) Good response to N2O",
+    "( + )",
+    "( +/- )",
+    "( - )"
+  ],
+  "Dx": [
+    "No Decay",
+    "S-ECC/CC",
+    "MGMT Challenge",
+    "Dental trauma/fractures",
+    "Malocclusion"
+  ],
+  "DxSpecifics": [
+    "P&F Decay",
+    "IP Decay",
+    "Cervical decay",
+    "Pulp Exposure",
+    "Abscessed/Necrotic teeth",
+    "Possible Pulp Necrosis",
+    "Class I tendency",
+    "Class II tendency",
+    "Class III tendency",
+    "Crowding",
+    "Ectopic Eruption",
+    "Serious Dental Disease. Potential for grave consequences including infection pain tooth loss and life long effects",
+    "Prompt treatment recommended"
+  ],
+  "CRA": [
+    "HIGH | Gave and discussed Caries Risk Reduction HO",
+    "MOD | Gave and discussed Caries Risk Reduction HO",
+    "LOW | Gave and discussed Caries Risk Reduction HO",
+    "OH especially at bedtime & fluoride use & diet instructions",
+    "High chance of new lesions in next 6-18 months"
+  ],
+  "Habits": [
+    "No apparent oral/facial Habits",
+    "Digit Habit: discussed dental consequences and habit cessations strategies.  If left uncorrected will have an affect on adult dentition",
+    "Pacifier Habit: discussed dental consequences and habit cessations strategies.  If left uncorrected will have an affect on adult dentition"
+  ],
+  "TxMod": [
+    "+ Routine RECARE",
+    "+ SDF:  as a means of caries control.  Not definitive treatment. Will stain decayed tooth structure black.  May need multiple applications. Child will need definitive restorative treatment in the future.  F/U recommended in office. Showed SDF treated teeth on Google Images",
+    "+ N2O: Mild sedation and anxiolysis.  Expect child to tolerate treatment but may not.  Discussed risk benefits cost alternative and nature of N2O treatment.  Child needs to be NPO for 2 hours prior to appt",
+    "-  multiple visits necessary to complete treatment",
+    "-  May not coop and need more advanced management ie GA",
+    "+ ORAL SED:  mild to moderate oral sedation. Discussed risks benefits alternative cost and nature of treatment with oral sedation. Child will not be asleep and may still cry.  Stabilization device will be used (papoose) and parent is asked to wait in the waiting room during treatment.  Oral sedation can be unpredictable.  There is a chance that the child may not cooperate and treatment may need to be aborted.  Child may be emotional and/or have tantrums after treatment as a side-effect of the sedative.",
+    "- Significant chance that child will not allow treatment.",
+    "+ GA:  treatment under  general anesthetic (asleep) due to extent of treatment need and management difficulties.  Discussed risk benefits cost alternative and nature of treatment under general anesthetic in detail including potential for rare but severe complications. Parent was given an opportunity to ask questions and consider options.",
+    "- Discussed options of In-Hospital vs Surgi Suite anesthesia, and advantages/disadvantages of each",
+    "- Surgi Centre preferred by parent",
+    "- GA in Hospital preferred by parent",
+    "- Parent given and explained GA PACKAGE",
+    "- Parent wants to consider options and will contact us for appointment",
+    "+ OBSERVE: parent to monitor signs and symptoms of progressing disease and contact office if they worsen or do not improve"
+  ],
+  "TxSpecifics": [
+    "RADS req'd for definitive treatment plan",
+    "Bonded Composite Restorations",
+    "Caries control - long term temporary restorations to control decay that may in time need to be replaced",
+    "Pit and Fissure Sealants for healthy teeth at risk for decay",
+    "Crowns required:  SSC - Silver crowns - will be visible when child opens",
+    "Crowns Required: Discussed SSC vs Zirconia crowns",
+    "Parent prefers SSC (silver crowns)",
+    "Parent prefers Zirconia Crowns with additional cost & potential for fracture",
+    "Possible EXT required",
+    "Possible Pulpotomy and Crown required",
+    "EXT of Abscessed teeth",
+    "EXT as per Orthodontic recommendation",
+    "EXT of over-retained teeth",
+    "- Discussed possible risk/complications with extractions including, fractures, bleeding, possible infection",
+    "- Space Maintainer recommended after disease treated",
+    "- Dd potential for space loss and consequences for crowding/malocclusion",
+    "Parent(s) was advised that should new decay develop in teeth already treated, CDCP may not cover treatment even for new lesions within the treatment timeout period.  Parent appeared to understand."
+  ],
+  "NV": [
+    "N2O Operative - Proceed with next restorative appt under N2O",
+    "ORAL SED - Proceed with restorative appt under Oral Sed",
+    "SURGI - Proceed with restorative treatment under GA",
+    "HOSPITAL  GA - Proceed with restorative treatment under GA",
+    "Recare in-office",
+    "F/U in-office",
+    "Deliver space maintainer",
+    "Family DDS for routine care",
+    "== Parent to contact the office after considering options.  Parent was made aware of 1. diagnosis 2. medical/dental recommendations and 3. consequences of no treatment. =="
+  ],
+  "Units": [
+    "1u",
+    "2u",
+    "3u",
+    "4u",
+    "5u",
+    "6u",
+    "7u"
+  ]
+}

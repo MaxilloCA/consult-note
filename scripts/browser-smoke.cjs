@@ -1,0 +1,41 @@
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const assert=require('node:assert/strict');
+const server=require('../server.cjs');
+(async()=>{
+ await new Promise(r=>server.listen(0,'127.0.0.1',r));
+ const browser=await chromium.launch({...(process.env.BROWSER_EXECUTABLE ? {executablePath:process.env.BROWSER_EXECUTABLE} : {}),headless:true});
+ const context=await browser.newContext({viewport:{width:1440,height:1050},permissions:['clipboard-read','clipboard-write']});
+ const page=await context.newPage(); const errors=[];const requests=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));
+ try{
+ await page.goto(`http://127.0.0.1:${server.address().port}`);await page.waitForSelector('#Dx button');
+ assert.equal(await page.locator('#preview').inputValue(),'');
+ await page.getByRole('button',{name:'Load synthetic example',exact:true}).click();
+ assert.match(await page.locator('#preview').inputValue(),/SYNTHETIC EXAMPLE/);
+ const history = page.getByRole('group',{name:'History detail phrases'}).getByRole('button',{name:'No pain',exact:true});
+ await history.click();
+ assert.match(await page.locator('#preview').inputValue(),/guardian reports no pain/);
+ await history.click();
+ assert.doesNotMatch(await page.locator('#preview').inputValue(),/guardian reports no pain/);
+ const sealants = page.getByRole('button',{name:'Sealants',exact:true});
+ await sealants.click();
+ const detail = page.getByRole('textbox',{name:'Detail for Sealants',exact:true});
+ assert.equal(await detail.evaluate(input=>input === document.activeElement),true);
+ await detail.fill('Synthetic sealant detail');
+ assert.match(await page.locator('#preview').inputValue(),/Pit and Fissure Sealants.*Synthetic sealant detail/);
+ await sealants.click();
+ assert.doesNotMatch(await page.locator('#preview').inputValue(),/Synthetic sealant detail/);
+ await page.locator('#Info_Tx').fill('Synthetic discussion entered during smoke test.');
+ await page.locator('#preview').fill('Final synthetic draft for clipboard verification.');
+ page.once('dialog',d=>d.dismiss()); await page.locator('#Dx button').first().click();
+ assert.equal(await page.locator('#preview').inputValue(),'Final synthetic draft for clipboard verification.');
+ await page.getByRole('button',{name:'Copy draft',exact:true}).click();
+ assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),'Final synthetic draft for clipboard verification.');
+ page.once('dialog',d=>d.dismiss());await page.getByRole('button',{name:'Clear draft',exact:true}).click();assert.match(await page.locator('#preview').inputValue(),/Final synthetic/);
+ page.once('dialog',d=>d.accept());await page.getByRole('button',{name:'Clear draft',exact:true}).click();assert.equal(await page.locator('#preview').inputValue(),'');assert.equal(await page.locator('#Info_Tx').inputValue(),'');
+ await page.getByRole('button',{name:'Load synthetic example',exact:true}).click();await page.screenshot({path:require('node:path').join(__dirname,'..','screenshot.png'),fullPage:false});
+ await page.reload();await page.waitForSelector('#Dx button');assert.equal(await page.locator('#preview').inputValue(),'');
+ await page.setViewportSize({width:390,height:844});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ assert.deepEqual(errors,[]);assert.ok(requests.every(u=>u.startsWith('http://127.0.0.1:')));
+ console.log('PASS: blank/demo/history phrases/treatment details/free-text/preview discard cancel/copy/reset cancel/reset confirm/reload/mobile overflow/no console errors/local requests.');
+ }finally{await browser.close();await new Promise(r=>server.close(r));}
+})().catch(e=>{console.error(e);process.exitCode=1});

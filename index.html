@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Consult Note</title><link rel="stylesheet" href="styles.css"><script defer src="app.js"></script></head>
+<body>
+<header><div><span class="eyebrow">CLINICIAN WORKFLOW</span><h1>Consult Note</h1><p>Structured selections. An editable consultation draft.</p></div><span class="badge">Manual · local</span></header>
+<aside class="notice">Drafts stay in this page. Review every statement before copying. No chart connection or saved history. Selections describe template wording, not clinical recommendations.</aside>
+<nav aria-label="Draft actions"><button id="demo">Load synthetic example</button><button id="clear">Clear draft</button><span id="status" role="status" aria-live="polite">Loading template…</span></nav>
+<main><div id="form"></div><section class="output"><div class="output-heading"><div><span class="eyebrow">REVIEW & EDIT</span><h2>Consultation draft</h2></div><button id="copy">Copy draft</button></div><p class="hint">Edit the draft for final wording. Rebuilding from selections asks before discarding your preview edits.</p><label class="sr-only" for="preview">Editable consultation note</label><textarea id="preview" spellcheck="false"></textarea><p class="hint">Drafts live in this tab's memory. Reloading or closing the page clears them. Clipboard content may persist outside the app.</p></section></main>
+<footer>A focused consultation template built around a working clinician’s documentation workflow.</footer>
+</body></html>
